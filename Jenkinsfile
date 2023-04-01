@@ -8,7 +8,6 @@ pipeline {
                 sh 'free -g'
             }
         }
-    }
     stage('parallel-Build') {
       parallel {
         stage('build-java-11'){
