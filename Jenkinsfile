@@ -1,5 +1,7 @@
 pipeline {
-  agent {label 'slave1'}
+  agent {
+    label 'slave1'
+  }
     stages {
         stage('Dev') {
             steps {
@@ -22,8 +24,11 @@ pipeline {
 
       } 
     }
-  agent{label 'slave2' }
-    stage('Test') {
+ 
+    stage('Test') { 
+      agent{
+        label 'slave2' 
+      }
             steps {
                 echo "In slave 2 system"
               sh 'hostname'
